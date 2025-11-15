@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}Trang chủ{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Hệ thống chỉnh sửa .bytes</h2>
+  <p class="small">Đăng nhập để upload file, chỉnh UID hoặc map giống chức năng bot.</p>
+  {% if user %}
+    <a class="btn" href="{{ url_for('dashboard') }}">Đi tới Dashboard</a>
+  {% else %}
+    <a class="btn" href="{{ url_for('login') }}">Đăng nhập</a>
+    <a class="btn" href="{{ url_for('register') }}" style="margin-left:8px">Đăng ký</a>
+  {% endif %}
+</div>
+{% endblock %}

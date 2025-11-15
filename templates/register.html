@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}Đăng ký{% endblock %}
+{% block content %}
+<div class="card">
+  <h3>Đăng ký</h3>
+  <form method="post">
+    <label>Username</label>
+    <input name="username" required>
+    <label>Password</label>
+    <input name="password" type="password" required>
+    <button class="btn" type="submit">Đăng ký</button>
+  </form>
+</div>
+{% endblock %}

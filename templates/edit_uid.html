@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}Edit UID{% endblock %}
+{% block content %}
+<div class="card">
+  <h3>Edit UID - {{ file.filename }}</h3>
+  <form method="post">
+    <label>New UID (number)</label>
+    <input name="new_uid" required>
+    <button class="btn" type="submit">Tạo file edited và tải xuống</button>
+  </form>
+</div>
+{% endblock %}

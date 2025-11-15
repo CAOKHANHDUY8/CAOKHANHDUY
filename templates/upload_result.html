@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}Chi tiết file{% endblock %}
+{% block content %}
+<div class="card">
+  <h3>File: {{ file.filename }}</h3>
+  <p class="small">Stored: {{ file.stored_name }}</p>
+
+  {% if file.uid_val %}
+    <p>UID: <b>{{ file.uid_val }}</b></p>
+  {% else %}
+    <p class="small">Không tìm thấy UID trong file này.</p>
+  {% endif %}
+
+  <div style="margin-top:12px">
+    <a class="btn" href="{{ url_for('file_edit_uid', file_id=file.id) }}">Edit UID</a>
+    <form action="{{ url_for('file_delete_uid', file_id=file.id) }}" method="post" style="display:inline">
+      <button class="btn danger" type="submit">Delete UID</button>
+    </form>
+    <a class="btn" href="{{ url_for('file_edit_map', file_id=file.id) }}" style="margin-left:8px">Edit Map</a>
+  </div>
+</div>
+{% endblock %}

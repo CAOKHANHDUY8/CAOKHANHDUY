@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="card">
+  <h3>Dashboard</h3>
+  <p class="small">Upload file .bytes rồi thực hiện hành động trên file</p>
+
+  <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".bytes" required>
+    <button class="btn" type="submit">Upload</button>
+  </form>
+
+  <hr>
+
+  <h4>Files của bạn</h4>
+  {% if files %}
+    <ul>
+      {% for f in files %}
+        <li>
+          <b>{{ f.filename }}</b> - <small>{{ f.created_at }}</small>
+          <a class="btn" href="{{ url_for('file_detail', file_id=f.id) }}" style="margin-left:8px">Xem / Thao tác</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="small">Bạn chưa upload file nào.</p>
+  {% endif %}
+</div>
+{% endblock %}
