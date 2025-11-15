@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+
+    <style>
+        body {
+            background: #0d0d0d;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            margin: 40px auto;
+            width: 90%;
+            max-width: 450px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 0 15px red, 0 0 30px #ff3333;
+        }
+
+        input, button {
+            width: 95%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        button {
+            background: #facc15;
+            font-weight: bold;
+            box-shadow: 0 0 10px #ffcc00;
+        }
+
+        a {
+            color: #4ea9ff;
+        }
+    </style>
+</head>
+
+<body>
+    <br><br>
+    <h2>{{ title }}</h2>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
